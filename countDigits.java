@@ -4,6 +4,7 @@ public class countDigits {
 
 	public static void main(String args[])
 	{
+		// Finding the count of digits of a number
 		int num= 123456789;
 		int rem = 0;
 		int count = 0;
