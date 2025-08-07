@@ -258,12 +258,14 @@ public class automatingForm {
 		// Create a LinkedHashMap to store key-value pairs from the table which is displayed
 		Map<String, String> actualData = new LinkedHashMap<>();
 
+		int i = 1;
 		// loop through each row to Retrieve key and value
 		for (WebElement row : actualList) {
 			String k = "//tbody/tr[" + i + "]/td[1]";//xpath of 1st cell in each row
 			String v = "//tbody/tr[" + i + "]/td[2]";//xpath of 2nd cell in each row
 			String key = row.findElement(By.xpath(k)).getText();
 			String value = row.findElement(By.xpath(v)).getText();
+			i++;
 		}
 
 		// Print the full map 
@@ -288,4 +290,5 @@ public class automatingForm {
 
 	
 }
+
 
