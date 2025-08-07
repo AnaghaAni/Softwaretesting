@@ -260,20 +260,10 @@ public class automatingForm {
 
 		// loop through each row to Retrieve key and value
 		for (WebElement row : actualList) {
-		    // Retrieve all columns from the row
-		    List<WebElement> cells = row.findElements(By.tagName("td"));
-
-		   
-		    if (cells.size() >= 2) {
-		        String key = cells.get(0).getText();     // First column - key
-		        String values = cells.get(1).getText();  // Second column - value
-		        actualData.put(key, values);             // Store key and values in map
-		    }
-
-		   
-		    // String key = row.findElement(By.xpath("td[1]")).getText();
-		    // String value = row.findElement(By.xpath("td[2]")).getText();
-		    // actualData.put(key, value);
+			String k = "//tbody/tr[" + i + "]/td[1]";//xpath of 1st cell in each row
+			String v = "//tbody/tr[" + i + "]/td[2]";//xpath of 2nd cell in each row
+			String key = row.findElement(By.xpath(k)).getText();
+			String value = row.findElement(By.xpath(v)).getText();
 		}
 
 		// Print the full map 
@@ -298,3 +288,4 @@ public class automatingForm {
 
 	
 }
+
